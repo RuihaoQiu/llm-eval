@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 .env
 .python-version
+notebooks/__marimo__/
+.logfire/
