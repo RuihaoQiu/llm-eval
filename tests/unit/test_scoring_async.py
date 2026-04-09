@@ -1,5 +1,3 @@
-"""Unit tests for async scorers — OpenAI calls are mocked."""
-
 from __future__ import annotations
 
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -8,15 +6,6 @@ import pytest
 
 from llm_eval.scoring.embedding import EmbeddingF1Scorer, EmbeddingScorer, _cosine
 from llm_eval.scoring.llm_judge import JudgeVerdict, LLMJudgeScorer
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def _fake_emb(values: list[float]) -> list[float]:
-    """Return a mock embedding vector."""
-    return values
 
 
 def _make_embedding_response(vector: list[float]) -> MagicMock:
@@ -31,10 +20,6 @@ def _make_judge_response(score: int, reasoning: str) -> MagicMock:
     return resp
 
 
-# ---------------------------------------------------------------------------
-# _cosine
-# ---------------------------------------------------------------------------
-
 class TestCosine:
     def test_identical(self) -> None:
         v = [1.0, 0.0, 0.0]
@@ -47,10 +32,6 @@ class TestCosine:
         assert _cosine([0.0, 0.0], [1.0, 0.0]) == 0.0
 
 
-# ---------------------------------------------------------------------------
-# EmbeddingScorer
-# ---------------------------------------------------------------------------
-
 class TestEmbeddingScorer:
     @pytest.mark.asyncio
     async def test_identical_strings(self) -> None:
@@ -59,27 +40,26 @@ class TestEmbeddingScorer:
             "llm_eval.scoring.embedding._client.embeddings.create",
             new=AsyncMock(return_value=_make_embedding_response(vec)),
         ):
-            scorer = EmbeddingScorer(threshold=0.8)
-            result = await scorer.score("senior", "senior")
+            result = await EmbeddingScorer(threshold=0.8).score("senior", "senior")
         assert result.score >= 0.99
         assert result.passed
 
     @pytest.mark.asyncio
     async def test_both_none(self) -> None:
-        scorer = EmbeddingScorer()
-        result = await scorer.score(None, None)
+        result = await EmbeddingScorer().score(None, None)
         assert result.score == 1.0
         assert result.passed
 
     @pytest.mark.asyncio
     async def test_one_none(self) -> None:
-        scorer = EmbeddingScorer()
-        result = await scorer.score("senior", None)
+        result = await EmbeddingScorer().score("senior", None)
         assert result.score == 0.0
         assert not result.passed
 
     @pytest.mark.asyncio
     async def test_dissimilar_scores_low(self) -> None:
+        import llm_eval.scoring.embedding as emb_mod
+        emb_mod._embedding_cache.clear()
         with patch(
             "llm_eval.scoring.embedding._client.embeddings.create",
             new=AsyncMock(side_effect=[
@@ -87,51 +67,35 @@ class TestEmbeddingScorer:
                 _make_embedding_response([0.0, 1.0]),
             ]),
         ):
-            scorer = EmbeddingScorer(threshold=0.8)
-            # Clear cache between tests
-            import llm_eval.scoring.embedding as emb_mod
-            emb_mod._embedding_cache.clear()
-            result = await scorer.score("Berlin", "Tokyo")
+            result = await EmbeddingScorer(threshold=0.8).score("Berlin", "Tokyo")
         assert result.score < 0.8
         assert not result.passed
 
 
-# ---------------------------------------------------------------------------
-# EmbeddingF1Scorer
-# ---------------------------------------------------------------------------
-
 class TestEmbeddingF1Scorer:
     @pytest.mark.asyncio
     async def test_empty_both(self) -> None:
-        scorer = EmbeddingF1Scorer()
-        result = await scorer.score([], [])
+        result = await EmbeddingF1Scorer().score([], [])
         assert result.score == 1.0
 
     @pytest.mark.asyncio
     async def test_empty_actual(self) -> None:
-        scorer = EmbeddingF1Scorer()
-        result = await scorer.score(["Python"], [])
+        result = await EmbeddingF1Scorer().score(["Python"], [])
         assert result.score == 0.0
         assert not result.passed
 
     @pytest.mark.asyncio
     async def test_perfect_match(self) -> None:
-        vec = [1.0, 0.0]
         import llm_eval.scoring.embedding as emb_mod
         emb_mod._embedding_cache.clear()
         with patch(
             "llm_eval.scoring.embedding._client.embeddings.create",
-            new=AsyncMock(return_value=_make_embedding_response(vec)),
+            new=AsyncMock(return_value=_make_embedding_response([1.0, 0.0])),
         ):
-            scorer = EmbeddingF1Scorer(threshold=0.5)
-            result = await scorer.score(["Python"], ["Python"])
+            result = await EmbeddingF1Scorer(threshold=0.5).score(["Python"], ["Python"])
         assert result.score >= 0.99
         assert result.passed
 
-
-# ---------------------------------------------------------------------------
-# LLMJudgeScorer
-# ---------------------------------------------------------------------------
 
 class TestLLMJudgeScorer:
     @pytest.mark.asyncio
@@ -140,8 +104,7 @@ class TestLLMJudgeScorer:
             "llm_eval.scoring.llm_judge._client.beta.chat.completions.parse",
             new=AsyncMock(return_value=_make_judge_response(2, "exact match")),
         ):
-            scorer = LLMJudgeScorer()
-            result = await scorer.score("Senior Data Engineer", "Data Engineer – Senior")
+            result = await LLMJudgeScorer().score("Senior Data Engineer", "Data Engineer – Senior")
         assert result.score == 1.0
         assert result.passed
 
@@ -151,8 +114,7 @@ class TestLLMJudgeScorer:
             "llm_eval.scoring.llm_judge._client.beta.chat.completions.parse",
             new=AsyncMock(return_value=_make_judge_response(1, "related but different")),
         ):
-            scorer = LLMJudgeScorer()
-            result = await scorer.score("Data Engineer", "Data Analyst")
+            result = await LLMJudgeScorer().score("Data Engineer", "Data Analyst")
         assert result.score == 0.5
 
     @pytest.mark.asyncio
@@ -161,8 +123,7 @@ class TestLLMJudgeScorer:
             "llm_eval.scoring.llm_judge._client.beta.chat.completions.parse",
             new=AsyncMock(return_value=_make_judge_response(0, "unrelated")),
         ):
-            scorer = LLMJudgeScorer()
-            result = await scorer.score("Data Engineer", "Graphic Designer")
+            result = await LLMJudgeScorer().score("Data Engineer", "Graphic Designer")
         assert result.score == 0.0
         assert not result.passed
 
@@ -172,17 +133,15 @@ class TestLLMJudgeScorer:
         with patch("llm_eval.scoring.llm_judge._client.beta.chat.completions.parse", new=mock_parse):
             scorer = LLMJudgeScorer()
             await scorer.score("A", "B")
-            await scorer.score("A", "B")  # should hit cache
+            await scorer.score("A", "B")
         assert mock_parse.call_count == 1
 
     @pytest.mark.asyncio
     async def test_both_none(self) -> None:
-        scorer = LLMJudgeScorer()
-        result = await scorer.score(None, None)
+        result = await LLMJudgeScorer().score(None, None)
         assert result.score == 1.0
 
     @pytest.mark.asyncio
     async def test_one_none(self) -> None:
-        scorer = LLMJudgeScorer()
-        result = await scorer.score("Senior Data Engineer", None)
+        result = await LLMJudgeScorer().score("Senior Data Engineer", None)
         assert result.score == 0.0

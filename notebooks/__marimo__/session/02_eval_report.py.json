@@ -1,0 +1,140 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.0",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "429f24e13de0423fcdda0141a4f43762",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "a890708a6af23e3cd828b0966b7006d6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='MJUe-0' random-id='d6edf126-9fb8-ccb2-535d-2d17068bf7f0'><marimo-dropdown data-initial-value='[&quot;gpt-4o-mini&quot;]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Model&lt;/span&gt;&lt;/span&gt;&quot;' data-options='[&quot;gpt-4o-mini&quot;,&quot;gpt-4.1-mini&quot;,&quot;gpt-4o&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false'></marimo-dropdown></marimo-ui-element><marimo-ui-element object-id='MJUe-1' random-id='fd3c8283-fa48-7599-ea2b-a3a5d4a98e5f'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Run eval&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "7e889f63c39adebf8776551ac36a938a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-callout-output data-html='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;&lt;strong&gt;Model:&lt;/strong&gt; &lt;code&gt;gpt-4o-mini&lt;/code&gt; &amp;nbsp;|&amp;nbsp; &lt;strong&gt;Mean score:&lt;/strong&gt; 0.91 &amp;nbsp;|&amp;nbsp; &lt;strong&gt;Pass rate:&lt;/strong&gt; 100% (10/10)&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;success&quot;'></marimo-callout-output>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "aca4787fa9ac04e29597cd526deefa82",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"per-example-scores\">Per-example scores</h3></span><marimo-ui-element object-id='bkHC-0' random-id='e248d0ff-76fb-919b-148b-968e7f0b8115'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_001&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.91,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.57,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_002&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.92,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:0.83,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.75,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_003&#92;&quot;,&#92;&quot;overall&#92;&quot;:1.0,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:1.0,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_004&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.91,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:0.85,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.69,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_005&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.91,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.57,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_006&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.97,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.84,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_007&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.92,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.58,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_008&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.77,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:0.83,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.0,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_009&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.93,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.64,&#92;&quot;skills&#92;&quot;:1.0},{&#92;&quot;id&#92;&quot;:&#92;&quot;ex_010&#92;&quot;,&#92;&quot;overall&#92;&quot;:0.92,&#92;&quot;passed&#92;&quot;:true,&#92;&quot;title&#92;&quot;:1.0,&#92;&quot;seniority&#92;&quot;:1.0,&#92;&quot;work_mode&#92;&quot;:1.0,&#92;&quot;location&#92;&quot;:0.64,&#92;&quot;skills&#92;&quot;:0.96}]&quot;' data-total-rows='10' data-total-columns='8' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;id&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;overall&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;passed&quot;,[&quot;boolean&quot;,&quot;bool&quot;]],[&quot;title&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;seniority&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;work_mode&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;location&quot;,[&quot;number&quot;,&quot;float64&quot;]],[&quot;skills&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "72103134e5d76e0c70df4406f2ae2e49",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"field-level-accuracy\">Field-level accuracy</h3></span><marimo-ui-element object-id='lEQa-0' random-id='0b14e4a5-8121-5eab-229a-aae523429eb7'><marimo-vega data-initial-value='{}' data-label='null' data-spec='{&quot;config&quot;:{&quot;view&quot;:{&quot;continuousWidth&quot;:300,&quot;continuousHeight&quot;:300}},&quot;layer&quot;:[{&quot;data&quot;:{&quot;url&quot;:&quot;./@file/111-42247538-GcWMiGEy.csv&quot;,&quot;format&quot;:{&quot;type&quot;:&quot;csv&quot;}},&quot;mark&quot;:{&quot;type&quot;:&quot;bar&quot;},&quot;encoding&quot;:{&quot;color&quot;:{&quot;condition&quot;:{&quot;test&quot;:&quot;(datum.mean_score &gt;= 0.5)&quot;,&quot;value&quot;:&quot;#4caf50&quot;},&quot;value&quot;:&quot;#f44336&quot;},&quot;tooltip&quot;:[{&quot;field&quot;:&quot;field&quot;,&quot;type&quot;:&quot;nominal&quot;},{&quot;field&quot;:&quot;mean_score&quot;,&quot;format&quot;:&quot;.2f&quot;,&quot;type&quot;:&quot;quantitative&quot;}],&quot;x&quot;:{&quot;axis&quot;:{&quot;labelAngle&quot;:0},&quot;field&quot;:&quot;field&quot;,&quot;sort&quot;:[&quot;title&quot;,&quot;seniority&quot;,&quot;work_mode&quot;,&quot;location&quot;,&quot;skills&quot;],&quot;type&quot;:&quot;nominal&quot;},&quot;y&quot;:{&quot;field&quot;:&quot;mean_score&quot;,&quot;scale&quot;:{&quot;domain&quot;:[0,1]},&quot;title&quot;:&quot;Mean score&quot;,&quot;type&quot;:&quot;quantitative&quot;}},&quot;title&quot;:&quot;Mean score per field&quot;},{&quot;data&quot;:{&quot;url&quot;:&quot;./@file/6-42247538-gsMqJ3cm.csv&quot;,&quot;format&quot;:{&quot;type&quot;:&quot;csv&quot;}},&quot;mark&quot;:{&quot;type&quot;:&quot;rule&quot;,&quot;color&quot;:&quot;gray&quot;,&quot;strokeDash&quot;:[4,4]},&quot;encoding&quot;:{&quot;y&quot;:{&quot;field&quot;:&quot;y&quot;,&quot;type&quot;:&quot;quantitative&quot;}}}],&quot;height&quot;:300,&quot;width&quot;:500,&quot;&#36;schema&quot;:&quot;https://vega.github.io/schema/vega-lite/v6.1.0.json&quot;}' data-chart-selection='true' data-field-selection='true' data-embed-options='{}'></marimo-vega></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "[W 260409 11:25:13 altair_transformer:79] Failed to convert data to arrow format, falling back to CSV: No module named 'pyarrow'\n[W 260409 11:25:13 altair_transformer:79] Failed to convert data to arrow format, falling back to CSV: No module named 'pyarrow'\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "PKri",
+      "code_hash": "594a45cbe14db3dd95fffe4c6d8312e1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"score-distribution\">Score distribution</h3></span><marimo-ui-element object-id='PKri-0' random-id='69d607e9-cfe9-486e-ade2-6a7caf4cafbd'><marimo-vega data-initial-value='{}' data-label='null' data-spec='{&quot;config&quot;:{&quot;view&quot;:{&quot;continuousWidth&quot;:300,&quot;continuousHeight&quot;:300}},&quot;data&quot;:{&quot;url&quot;:&quot;./@file/1002-42247538-8byG9onI.csv&quot;,&quot;format&quot;:{&quot;type&quot;:&quot;csv&quot;}},&quot;mark&quot;:{&quot;type&quot;:&quot;boxplot&quot;,&quot;extent&quot;:&quot;min-max&quot;},&quot;encoding&quot;:{&quot;color&quot;:{&quot;field&quot;:&quot;field&quot;,&quot;legend&quot;:null,&quot;type&quot;:&quot;nominal&quot;},&quot;x&quot;:{&quot;axis&quot;:{&quot;labelAngle&quot;:0},&quot;field&quot;:&quot;field&quot;,&quot;type&quot;:&quot;nominal&quot;},&quot;y&quot;:{&quot;field&quot;:&quot;score&quot;,&quot;scale&quot;:{&quot;domain&quot;:[0,1]},&quot;type&quot;:&quot;quantitative&quot;}},&quot;height&quot;:300,&quot;title&quot;:&quot;Score distribution per field&quot;,&quot;width&quot;:500,&quot;&#36;schema&quot;:&quot;https://vega.github.io/schema/vega-lite/v6.1.0.json&quot;}' data-chart-selection='true' data-field-selection='true' data-embed-options='{}'></marimo-vega></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "[W 260409 11:25:13 altair_transformer:79] Failed to convert data to arrow format, falling back to CSV: No module named 'pyarrow'\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Xref",
+      "code_hash": "a6dbfc0d27e5a28197c29577d3c0f35f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JAFV",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

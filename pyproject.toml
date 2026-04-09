@@ -11,6 +11,9 @@ dependencies = [
     "rich>=13.7",
     "rapidfuzz>=3.9",
     "numpy>=1.26",
+    "marimo>=0.10",
+    "altair>=5.3",
+    "pandas>=2.2",
 ]
 
 [dependency-groups]
@@ -20,7 +23,12 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
+filterwarnings = ["ignore::UserWarning:pydantic"]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+[tool.logfire]
+ignore_no_config = true
 
 [tool.black]
 line-length = 100

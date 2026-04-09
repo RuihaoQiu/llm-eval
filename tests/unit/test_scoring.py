@@ -1,8 +1,4 @@
-"""Unit tests for deterministic scorers — no LLM calls."""
-
 from __future__ import annotations
-
-import pytest
 
 from llm_eval.scoring.deterministic import ExactMatchScorer, FuzzyMatchScorer
 
@@ -65,6 +61,5 @@ class TestFuzzyMatchScorer:
         assert not result.passed
 
     def test_custom_threshold(self) -> None:
-        scorer_low = FuzzyMatchScorer(threshold=0.5)
-        result = scorer_low.score("London", "Lndn")
-        assert result.passed  # low threshold, partial match passes
+        result = FuzzyMatchScorer(threshold=0.5).score("London", "Lndn")
+        assert result.passed

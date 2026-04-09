@@ -26,17 +26,6 @@ async def extract_job_info(
     model: str = "gpt-4o-mini",
     job_id: str = "unknown",
 ) -> JobInfo:
-    """Extract structured job information from a raw posting.
-
-    Args:
-        raw_description: Full text body of the job description.
-        raw_title: Raw job title string from the posting.
-        model: OpenAI model identifier to use.
-        job_id: Example ID forwarded to the trace span for filtering.
-
-    Returns:
-        Parsed ``JobInfo`` instance.
-    """
     with logfire.span("extract_job_info", job_id=job_id, model=model):
         logger.debug("Extracting job info model=%s job_id=%s title=%.50s", model, job_id, raw_title)
         response = await _client.beta.chat.completions.parse(
