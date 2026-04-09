@@ -1,0 +1,2688 @@
+{
+  "model": "gpt-4o-mini",
+  "examples": [
+    {
+      "example_id": "ex_001",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5714285714285714,
+            "passed": false,
+            "reason": "ratio=0.57"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9113581157083611,
+            "passed": true,
+            "reason": "precision=0.84 recall=1.00 f1=0.91"
+          }
+        }
+      ],
+      "overall_score": 0.8965573374273864,
+      "passed": true
+    },
+    {
+      "example_id": "ex_002",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.75,
+            "passed": false,
+            "reason": "ratio=0.75"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.8259590864181519,
+            "passed": true,
+            "reason": "cosine=0.826"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000238418578,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.915191822052002,
+      "passed": true
+    },
+    {
+      "example_id": "ex_003",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999523162841,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9999999904632568,
+      "passed": true
+    },
+    {
+      "example_id": "ex_004",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6923076923076923,
+            "passed": false,
+            "reason": "ratio=0.69"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.8456329703330994,
+            "passed": true,
+            "reason": "cosine=0.846"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9075881325281584,
+      "passed": true
+    },
+    {
+      "example_id": "ex_005",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5714285714285714,
+            "passed": false,
+            "reason": "ratio=0.57"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999735090468,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9142857089875236,
+      "passed": true
+    },
+    {
+      "example_id": "ex_006",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.8387096774193549,
+            "passed": true,
+            "reason": "ratio=0.84"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999701976776,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.7677419295234065,
+      "passed": true
+    },
+    {
+      "example_id": "ex_007",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5806451612903225,
+            "passed": false,
+            "reason": "ratio=0.58"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.9999999403953552,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000794728596,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9161290362317075,
+      "passed": true
+    },
+    {
+      "example_id": "ex_008",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected=None, actual='Europe or North America'"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.8256860971450806,
+            "passed": true,
+            "reason": "cosine=0.826"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.7651372194290161,
+      "passed": true
+    },
+    {
+      "example_id": "ex_009",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6363636363636364,
+            "passed": false,
+            "reason": "ratio=0.64"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000074505806,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9272727287628435,
+      "passed": true
+    },
+    {
+      "example_id": "ex_010",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6363636363636364,
+            "passed": false,
+            "reason": "ratio=0.64"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9768603444099426,
+            "passed": true,
+            "reason": "precision=0.98 recall=0.98 f1=0.98"
+          }
+        }
+      ],
+      "overall_score": 0.9226447961547158,
+      "passed": true
+    },
+    {
+      "example_id": "ex_011",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5555555555555556,
+            "passed": false,
+            "reason": "ratio=0.56"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999900658926,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9111111091242897,
+      "passed": true
+    },
+    {
+      "example_id": "ex_012",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "ratio=1.00"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000099341075,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 1.0000000019868216,
+      "passed": true
+    },
+    {
+      "example_id": "ex_013",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.631578947368421,
+            "passed": false,
+            "reason": "ratio=0.63"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000198682149,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9263157934473272,
+      "passed": true
+    },
+    {
+      "example_id": "ex_014",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5217391304347826,
+            "passed": false,
+            "reason": "ratio=0.52"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000198682149,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9043478300605996,
+      "passed": true
+    },
+    {
+      "example_id": "ex_015",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000298023224,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 1.0000000059604646,
+      "passed": true
+    },
+    {
+      "example_id": "ex_016",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected=None, actual='Americas'"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9541489680608114,
+            "passed": true,
+            "reason": "precision=0.95 recall=0.95 f1=0.95"
+          }
+        }
+      ],
+      "overall_score": 0.7908297936121623,
+      "passed": true
+    },
+    {
+      "example_id": "ex_017",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5714285714285714,
+            "passed": false,
+            "reason": "ratio=0.57"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000033113692,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.914285738789846,
+      "passed": true
+    },
+    {
+      "example_id": "ex_018",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6923076923076923,
+            "passed": false,
+            "reason": "ratio=0.69"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9825031687231625,
+            "passed": true,
+            "reason": "precision=0.98 recall=0.98 f1=0.98"
+          }
+        }
+      ],
+      "overall_score": 0.934962172206171,
+      "passed": true
+    },
+    {
+      "example_id": "ex_019",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6666666666666667,
+            "passed": false,
+            "reason": "ratio=0.67"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000165568457,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9333333366447025,
+      "passed": true
+    },
+    {
+      "example_id": "ex_020",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6,
+            "passed": false,
+            "reason": "ratio=0.60"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.9999998807907104,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000298023224,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9199999821186065,
+      "passed": true
+    },
+    {
+      "example_id": "ex_021",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.75,
+            "passed": false,
+            "reason": "ratio=0.75"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        }
+      ],
+      "overall_score": 0.95,
+      "passed": true
+    },
+    {
+      "example_id": "ex_022",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6896551724137931,
+            "passed": false,
+            "reason": "ratio=0.69"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.8741401794195616,
+            "passed": true,
+            "reason": "precision=0.78 recall=1.00 f1=0.87"
+          }
+        }
+      ],
+      "overall_score": 0.9127590703666708,
+      "passed": true
+    },
+    {
+      "example_id": "ex_023",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.7619047619047619,
+            "passed": false,
+            "reason": "ratio=0.76"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.9999999403953552,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        }
+      ],
+      "overall_score": 0.7523809404600235,
+      "passed": true
+    },
+    {
+      "example_id": "ex_024",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5714285714285714,
+            "passed": false,
+            "reason": "ratio=0.57"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999850988388,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9142857351473399,
+      "passed": true
+    },
+    {
+      "example_id": "ex_025",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.8181818181818181,
+            "passed": true,
+            "reason": "ratio=0.82"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.8999056374613172,
+            "passed": true,
+            "reason": "precision=0.82 recall=1.00 f1=0.90"
+          }
+        }
+      ],
+      "overall_score": 0.943617514970485,
+      "passed": true
+    },
+    {
+      "example_id": "ex_026",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.72,
+            "passed": false,
+            "reason": "ratio=0.72"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9440000238418579,
+      "passed": true
+    },
+    {
+      "example_id": "ex_027",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.48,
+            "passed": false,
+            "reason": "ratio=0.48"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.00000003973643,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.6960000317891438,
+      "passed": false
+    },
+    {
+      "example_id": "ex_028",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.64,
+            "passed": false,
+            "reason": "ratio=0.64"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000425747462,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.7280000085149492,
+      "passed": true
+    },
+    {
+      "example_id": "ex_029",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5454545454545454,
+            "passed": false,
+            "reason": "ratio=0.55"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000695387523,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.7090909229986595,
+      "passed": true
+    },
+    {
+      "example_id": "ex_030",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.64,
+            "passed": false,
+            "reason": "ratio=0.64"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000447034836,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9280000089406967,
+      "passed": true
+    },
+    {
+      "example_id": "ex_031",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.4705882352941176,
+            "passed": false,
+            "reason": "ratio=0.47"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000496705372,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.894117656992931,
+      "passed": true
+    },
+    {
+      "example_id": "ex_032",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5106382978723405,
+            "passed": false,
+            "reason": "ratio=0.51"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.902127659574468,
+      "passed": true
+    },
+    {
+      "example_id": "ex_033",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6,
+            "passed": false,
+            "reason": "ratio=0.60"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9471460183461509,
+            "passed": true,
+            "reason": "precision=0.95 recall=0.95 f1=0.95"
+          }
+        }
+      ],
+      "overall_score": 0.9094292036692302,
+      "passed": true
+    },
+    {
+      "example_id": "ex_034",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.42307692307692313,
+            "passed": false,
+            "reason": "ratio=0.42"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000298023224,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8846154144177071,
+      "passed": true
+    },
+    {
+      "example_id": "ex_035",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6666666666666667,
+            "passed": false,
+            "reason": "ratio=0.67"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.6236051321029663,
+            "passed": false,
+            "reason": "cosine=0.624"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent as 'Softwareentwickler' is the German equivalent of 'Software Developer', and the additional '(m/w/d)' indicates gender diversity."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8580543597539266,
+      "passed": true
+    },
+    {
+      "example_id": "ex_036",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5555555555555556,
+            "passed": false,
+            "reason": "ratio=0.56"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.6982837319374084,
+            "passed": false,
+            "reason": "cosine=0.698"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent, differing only in language."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.00000003973643,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8507678654458788,
+      "passed": true
+    },
+    {
+      "example_id": "ex_037",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.631578947368421,
+            "passed": false,
+            "reason": "ratio=0.63"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.6836428642272949,
+            "passed": false,
+            "reason": "cosine=0.684"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent, with 'Desarrollador Backend' being the Spanish translation of 'Backend Developer'."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.000000035762787,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8630443694717005,
+      "passed": true
+    },
+    {
+      "example_id": "ex_038",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6923076923076923,
+            "passed": false,
+            "reason": "ratio=0.69"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.696426510810852,
+            "passed": false,
+            "reason": "cosine=0.696"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent as they are the same role described in different languages."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000298023224,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8777468465841733,
+      "passed": true
+    },
+    {
+      "example_id": "ex_039",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5806451612903225,
+            "passed": false,
+            "reason": "ratio=0.58"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.8778733611106873,
+            "passed": true,
+            "reason": "cosine=0.878"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000476837159,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.6917037140169452,
+      "passed": false
+    },
+    {
+      "example_id": "ex_040",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.5555555555555556,
+            "passed": false,
+            "reason": "ratio=0.56"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.7673095464706421,
+            "passed": false,
+            "reason": "cosine=0.767"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent, with one being the Italian translation of the other."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0000000099341075,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.864573022392061,
+      "passed": true
+    },
+    {
+      "example_id": "ex_041",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        }
+      ],
+      "overall_score": 1.0,
+      "passed": true
+    },
+    {
+      "example_id": "ex_042",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected empty, actual non-empty"
+          }
+        }
+      ],
+      "overall_score": 0.8,
+      "passed": true
+    },
+    {
+      "example_id": "ex_043",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        }
+      ],
+      "overall_score": 1.0000000238418578,
+      "passed": true
+    },
+    {
+      "example_id": "ex_044",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.75,
+            "passed": false,
+            "reason": "ratio=0.75"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0000001192092896,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected empty, actual non-empty"
+          }
+        }
+      ],
+      "overall_score": 0.7500000238418579,
+      "passed": true
+    },
+    {
+      "example_id": "ex_045",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.9999998807907104,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9999999761581421,
+      "passed": true
+    },
+    {
+      "example_id": "ex_046",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected=None, actual='hybrid'"
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "cosine=1.000"
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected empty, actual non-empty"
+          }
+        }
+      ],
+      "overall_score": 0.6,
+      "passed": false
+    },
+    {
+      "example_id": "ex_047",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.7077701687812805,
+            "passed": false,
+            "reason": "cosine=0.708"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent, as 'Freelance Data Scientist' specifies the employment type but maintains the core job title."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9415540337562561,
+      "passed": true
+    },
+    {
+      "example_id": "ex_048",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.64,
+            "passed": false,
+            "reason": "ratio=0.64"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.6564980149269104,
+            "passed": false,
+            "reason": "cosine=0.656"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The actual title is a minor reformulation of the expected title, specifying that it's a contract position."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 1.000000035762787,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.8592996101379395,
+      "passed": true
+    },
+    {
+      "example_id": "ex_049",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.7153984308242798,
+            "passed": false,
+            "reason": "cosine=0.715"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent, as both refer to the same role with only the addition of 'Part-time' indicating the employment type."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.9999999701976776,
+            "passed": true,
+            "reason": "precision=1.00 recall=1.00 f1=1.00"
+          }
+        }
+      ],
+      "overall_score": 0.9430796802043915,
+      "passed": true
+    },
+    {
+      "example_id": "ex_050",
+      "field_results": [
+        {
+          "field": "seniority",
+          "scorer": "exact_match",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": null
+          }
+        },
+        {
+          "field": "work_mode",
+          "scorer": "exact_match",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": null
+          }
+        },
+        {
+          "field": "location",
+          "scorer": "fuzzy_match",
+          "result": {
+            "score": 0.6896551724137931,
+            "passed": false,
+            "reason": "ratio=0.69"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "embedding_similarity",
+          "result": {
+            "score": 0.7163612246513367,
+            "passed": false,
+            "reason": "cosine=0.716"
+          }
+        },
+        {
+          "field": "title",
+          "scorer": "llm_judge",
+          "result": {
+            "score": 1.0,
+            "passed": true,
+            "reason": "The titles are semantically equivalent with one being a specific time-limited situation of the other."
+          }
+        },
+        {
+          "field": "skills",
+          "scorer": "embedding_f1",
+          "result": {
+            "score": 0.0,
+            "passed": false,
+            "reason": "expected empty, actual non-empty"
+          }
+        }
+      ],
+      "overall_score": 0.481203279413026,
+      "passed": false
+    }
+  ],
+  "mean_score": 0.8723437092442665,
+  "pass_rate": 0.92
+}

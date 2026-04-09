@@ -88,6 +88,27 @@ data/golden_set.jsonl
 | Internships | 4 | Edge of employment type enum |
 | Salary in unusual format | 4 | Numeric parsing edge cases |
 
+### Results
+
+| Model | Mean score | Pass rate |
+|---|---|---|
+| `gpt-4o-mini` | 0.87 | 92% (46/50) |
+| `gpt-4.1-mini` | 0.88 | 96% (48/50) |
+
+Field-level breakdown (gpt-4o-mini / gpt-4.1-mini):
+
+| Field | gpt-4o-mini | gpt-4.1-mini | Δ |
+|---|---|---|---|
+| title | 0.93 | 0.94 | +0.01 |
+| seniority | 0.86 | 0.92 | **+0.06** |
+| work_mode | 0.98 | 1.00 | +0.02 |
+| location | 0.68 | 0.66 | −0.02 |
+| skills | 0.91 | 0.87 | −0.04 |
+
+`gpt-4.1-mini` wins on seniority and work_mode classification. `gpt-4o-mini` is slightly better on skills (less conservative on sparse descriptions). Location is the weakest field for both — fuzzy match degrades on city+country vs city-only mismatches.
+
+Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run notebooks/03_model_comparison.py`.
+
 ---
 
 ## Quickstart
@@ -99,12 +120,22 @@ uv sync
 # Run unit tests (no API key required)
 uv run pytest tests/unit/ -v
 
-# Run component eval (requires OPENAI_API_KEY)
+# Run the full eval CLI (requires OPENAI_API_KEY)
 export OPENAI_API_KEY=sk-...
+uv run python run_eval.py --model gpt-4o-mini
+
+# Run component eval via pytest
 uv run pytest evals/component/ -v
 
 # Run judge consistency meta-eval
 uv run pytest evals/judge/ -v
+
+# Run abstention/calibration eval
+uv run pytest evals/component/test_router.py -v
+
+# Visualise results (no API key needed — reads versioned artifacts)
+uv run marimo run notebooks/02_eval_report.py
+uv run marimo run notebooks/03_model_comparison.py
 ```
 
 ---
@@ -125,14 +156,19 @@ llm-eval/
 │   └── eval/
 │       ├── runner.py          # Async eval loop
 │       ├── dataset.py         # Load/validate golden set from JSONL
-│       └── experiment.py      # ExperimentConfig, compare_experiments() [Phase 3]
+│       └── experiment.py      # load_experiment(), compare_experiments()
 ├── evals/
 │   ├── component/
-│   │   └── test_extraction.py # Field-level accuracy (requires API key)
+│   │   ├── test_extraction.py # Field-level accuracy (requires API key)
+│   │   └── test_router.py     # Abstention/calibration eval
 │   └── judge/
 │       └── test_judge.py      # Judge consistency meta-eval
 ├── data/
-│   └── golden_set.jsonl       # 50 hand-curated synthetic examples
+│   ├── golden_set.jsonl       # 50 hand-curated synthetic examples
+│   └── experiments/           # Versioned JSON artifacts per model run
+├── notebooks/
+│   ├── 02_eval_report.py      # Marimo: per-field scores, failure breakdown
+│   └── 03_model_comparison.py # Marimo: side-by-side delta table
 └── tests/
     └── unit/
         ├── test_scoring.py          # Deterministic scorer tests
