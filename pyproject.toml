@@ -14,7 +14,6 @@ dependencies = [
     "marimo>=0.10",
     "altair>=5.3",
     "pandas>=2.2",
-    "rich>=13.7",
 ]
 
 [dependency-groups]
@@ -31,5 +30,5 @@ asyncio_default_fixture_loop_scope = "session"
 [tool.logfire]
 ignore_no_config = true
 
-[tool.black]
+[tool.ruff]
 line-length = 100
