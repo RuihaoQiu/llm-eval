@@ -1,9 +1,9 @@
 """Marimo notebook: visualize eval results.
 
 Run with:
-    uv run marimo run notebooks/02_eval_report.py
+    uv run marimo run notebooks/eval_report.py
 Or edit mode:
-    uv run marimo edit notebooks/02_eval_report.py
+    uv run marimo edit notebooks/eval_report.py
 """
 
 import marimo

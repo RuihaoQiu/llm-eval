@@ -107,7 +107,7 @@ Field-level breakdown (gpt-4o-mini / gpt-4.1-mini):
 
 `gpt-4.1-mini` wins on seniority and work_mode classification. `gpt-4o-mini` is slightly better on skills (less conservative on sparse descriptions). Location is the weakest field for both — fuzzy match degrades on city+country vs city-only mismatches.
 
-Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run notebooks/03_model_comparison.py`.
+Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run notebooks/model_comparison.py`.
 
 ---
 
@@ -134,8 +134,8 @@ uv run pytest evals/judge/ -v
 uv run pytest evals/component/test_router.py -v
 
 # Visualise results (no API key needed — reads versioned artifacts)
-uv run marimo run notebooks/02_eval_report.py
-uv run marimo run notebooks/03_model_comparison.py
+uv run marimo run notebooks/eval_report.py
+uv run marimo run notebooks/model_comparison.py
 ```
 
 ---
@@ -167,8 +167,8 @@ llm-eval/
 │   ├── golden_set.jsonl       # 50 hand-curated synthetic examples
 │   └── experiments/           # Versioned JSON artifacts per model run
 ├── notebooks/
-│   ├── 02_eval_report.py      # Marimo: per-field scores, failure breakdown
-│   └── 03_model_comparison.py # Marimo: side-by-side delta table
+│   ├── eval_report.py         # Marimo: per-field scores, failure breakdown
+│   └── model_comparison.py    # Marimo: side-by-side delta table
 └── tests/
     └── unit/
         ├── test_scoring.py          # Deterministic scorer tests

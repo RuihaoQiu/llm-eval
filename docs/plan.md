@@ -53,8 +53,8 @@ llm-eval/
 │   └── experiments/           # Pre-run results JSON (version-controlled artifacts)
 ├── notebooks/
 │   ├── 01_trace_explorer.py   # Marimo: visualize a single trace span-by-span
-│   ├── 02_eval_report.py      # Marimo: per-field accuracy, failure breakdown
-│   └── 03_model_comparison.py # Marimo: side-by-side experiment comparison
+│   ├── eval_report.py      # Marimo: per-field accuracy, failure breakdown
+│   └── model_comparison.py # Marimo: side-by-side experiment comparison
 ├── docs/
 │   ├── plan.md                # This file
 │   ├── design.md              # Why each scoring strategy was chosen per field
@@ -162,7 +162,7 @@ Checkpoint: `uv run pytest evals/component/ -v` passes. ✅
 - [x] Title scoring: embedding similarity first, LLM judge only on failure
 - [x] `evals/judge/test_judge.py` — judge consistency meta-eval (variance < 0.2 across 3 runs)
 - [x] `tests/unit/test_scoring_async.py` — unit tests for async scorers (mocked API calls)
-- [x] `notebooks/02_eval_report.py` — Marimo notebook: per-field scores, bar chart, distribution, failures
+- [x] `notebooks/eval_report.py` — Marimo notebook: per-field scores, bar chart, distribution, failures
 - [ ] Finish all 50 golden examples
 - [ ] Rich terminal report from `run_eval.py`
 
@@ -174,10 +174,10 @@ Checkpoint: traces visible in Logfire dashboard at https://logfire-eu.pydantic.d
 - [x] `llm_eval/eval/experiment.py` — `load_experiment()`, `compare_experiments()` returns a delta table per field
 - [x] `run_eval.py` — `--model` flag and `_save_artifact()` saving to `data/experiments/<model>_<timestamp>.json`
 - [x] Run real comparison: `gpt-4o-mini` (mean 0.87, 92% pass) vs `gpt-4.1-mini` (mean 0.88, 96% pass)
-- [x] `notebooks/03_model_comparison.py` — Marimo: side-by-side delta table + bar charts, regressions in red
+- [x] `notebooks/model_comparison.py` — Marimo: side-by-side delta table + bar charts, regressions in red
 - [x] `data/experiments/` — version-controlled JSON artifacts so notebooks render without API keys
 
-Checkpoint: `uv run python run_eval.py --model gpt-4.1-mini` produces a versioned JSON artifact; `notebooks/03_model_comparison.py` renders the delta table offline. ✅
+Checkpoint: `uv run python run_eval.py --model gpt-4.1-mini` produces a versioned JSON artifact; `notebooks/model_comparison.py` renders the delta table offline. ✅
 
 ### Phase 4 — Polish + Publish ✅
 *Goal: ready to share as a portfolio piece*
