@@ -42,10 +42,10 @@ Most LLM eval setups make the same mistakes:
 data/golden_set.jsonl
         │
         ▼
- eval/dataset.py          ← load + validate golden examples
+ llm_eval/eval/dataset.py  ← load + validate golden examples
         │
         ▼
- eval/runner.py           ← async loop (semaphore, tracing)
+ llm_eval/eval/runner.py  ← async loop (semaphore, tracing)
         │        │
         ▼        ▼
   agent.py    scoring/    ← field-specific scorers
@@ -95,6 +95,8 @@ data/golden_set.jsonl
 | `gpt-4o-mini` | 0.87 | 92% (46/50) |
 | `gpt-4.1-mini` | 0.88 | 96% (48/50) |
 
+Pass threshold: overall score ≥ 0.7 (mean across all fields).
+
 Field-level breakdown (gpt-4o-mini / gpt-4.1-mini):
 
 | Field | gpt-4o-mini | gpt-4.1-mini | Δ |
@@ -111,6 +113,12 @@ Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run no
 
 ---
 
+## Prerequisites
+
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (`pip install uv`)
+- `OPENAI_API_KEY` for eval runs (unit tests don't need it)
+
 ## Quickstart
 
 ```bash
@@ -121,7 +129,7 @@ uv sync
 uv run pytest tests/unit/ -v
 
 # Run the full eval CLI (requires OPENAI_API_KEY)
-export OPENAI_API_KEY=sk-...
+export OPENAI_API_KEY=your-api-key-here
 uv run python run_eval.py --model gpt-4o-mini
 
 # Run component eval via pytest
@@ -144,15 +152,16 @@ uv run marimo run notebooks/03_model_comparison.py
 
 ```
 llm-eval/
+├── run_eval.py            # CLI entry point
 ├── llm_eval/
 │   ├── agent.py               # Single-step extractor (OpenAI structured output)
 │   ├── schemas.py             # Pydantic models: JobInfo, GoldenExample, EvalReport
 │   ├── trace.py               # Logfire tracing helpers
-│   └── scoring/
-│       ├── base.py            # Scorer / AsyncScorer protocols
-│       ├── deterministic.py   # ExactMatchScorer, FuzzyMatchScorer
-│       ├── embedding.py       # EmbeddingScorer, EmbeddingF1Scorer
-│       └── llm_judge.py       # LLMJudgeScorer with caching
+│   ├── scoring/
+│   │   ├── base.py            # Scorer / AsyncScorer protocols
+│   │   ├── deterministic.py   # ExactMatchScorer, FuzzyMatchScorer
+│   │   ├── embedding.py       # EmbeddingScorer, EmbeddingF1Scorer
+│   │   └── llm_judge.py       # LLMJudgeScorer with caching
 │   └── eval/
 │       ├── runner.py          # Async eval loop
 │       ├── dataset.py         # Load/validate golden set from JSONL
