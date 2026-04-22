@@ -13,6 +13,12 @@ class JobInfo(BaseModel):
     skills: list[str] = []
 
 
+class ExtractionResult(BaseModel):
+    job_info: JobInfo
+    latency_ms: float
+    total_tokens: int
+
+
 class GoldenExample(BaseModel):
     id: str
     category: str
@@ -38,6 +44,8 @@ class ExampleReport(BaseModel):
     field_results: list[FieldResult]
     overall_score: float
     passed: bool
+    latency_ms: float = 0.0
+    total_tokens: int = 0
 
 
 class EvalReport(BaseModel):
@@ -45,3 +53,5 @@ class EvalReport(BaseModel):
     examples: list[ExampleReport]
     mean_score: float
     pass_rate: float
+    mean_latency_ms: float = 0.0
+    total_tokens: int = 0

@@ -14,11 +14,11 @@ The extractor takes a raw job posting and returns a structured `JobInfo`:
 
 | Field | Type | Scorer |
 |---|---|---|
-| `title` | string | Embedding similarity + LLM judge (on failure) |
+| `title` | string | LLM judge |
 | `seniority` | enum | Exact match |
 | `work_mode` | enum | Exact match |
 | `location` | string | Fuzzy match |
-| `skills` | list[str] | Embedding F1 |
+| `skills` | list[str] | LLM judge (list rubric) |
 
 Every scorer returns a continuous score in `[0, 1]` — not just pass/fail. This enables partial credit, delta tables across experiments, and richer failure analysis.
 
@@ -50,7 +50,6 @@ data/golden_set.jsonl
         ▼        ▼
   agent.py    scoring/    ← field-specific scorers
                 ├── deterministic.py   ExactMatch, FuzzyMatch
-                ├── embedding.py       EmbeddingScorer, EmbeddingF1Scorer
                 └── llm_judge.py       LLMJudgeScorer (cached)
         │
         ▼
@@ -61,15 +60,17 @@ data/golden_set.jsonl
 
 - **Enum fields** (`seniority`, `work_mode`): exact match — no partial credit for wrong enum values.
 - **Text fields** (`location`): fuzzy match via RapidFuzz — handles abbreviations, punctuation, transliteration.
-- **Set-valued fields** (`skills`): soft embedding F1 — order-invariant, semantic, computes precision and recall separately.
-- **Open-ended text** (`title`): embedding cosine similarity first; LLM judge is called only when similarity fails. This saves tokens while catching semantic equivalences fuzzy match misses.
+- **Set-valued fields** (`skills`): LLM judge with a list-aware rubric — handles abbreviations and synonyms ("k8s" = "Kubernetes"), scores overlap on a 0–2 scale.
+- **Open-ended text** (`title`): LLM judge — handles translations, abbreviations, and seniority-modifier differences that string matching misses.
 
 ### LLM Judge
 
 - Structured output: `JudgeVerdict(score: Literal[0, 1, 2], reasoning: str)`
 - Score mapping: `0 → 0.0`, `1 → 0.5`, `2 → 1.0`
-- Results cached by `hash(rubric + expected + actual)` — identical comparisons are never re-evaluated.
-- Consistency meta-eval in `evals/judge/`: runs the judge 3× on identical pairs and asserts variance < 0.2.
+- Separate rubrics for title (semantic equivalence) and skills (list overlap with synonym handling)
+- Judge model is configurable independently from extraction model (default: `gpt-4o`) — avoids self-evaluation bias
+- Results cached by `hash(rubric + expected + actual)` — identical comparisons are never re-evaluated
+- Consistency meta-eval in `evals/judge/`: runs the judge 3× on identical pairs and asserts variance < 0.2
 
 ### Golden dataset
 
@@ -90,22 +91,23 @@ data/golden_set.jsonl
 
 ### Results
 
-| Model | Mean score | Pass rate |
+Latest run: `gpt-4o-mini` extraction, `gpt-4o` judge.
+
+| Model | Mean score | Pass rate | Avg latency | Total tokens |
+|---|---|---|---|---|
+| `gpt-4o-mini` | 0.90 | 94% (47/50) | 1789ms | 16,224 |
+
+Field-level breakdown:
+
+| Field | Mean score | Pass rate |
 |---|---|---|
-| `gpt-4o-mini` | 0.87 | 92% (46/50) |
-| `gpt-4.1-mini` | 0.88 | 96% (48/50) |
+| title | 1.00 | 100% |
+| seniority | 0.92 | 92% |
+| work_mode | 0.98 | 98% |
+| location | 0.68 | 90% |
+| skills | 0.91 | 92% |
 
-Field-level breakdown (gpt-4o-mini / gpt-4.1-mini):
-
-| Field | gpt-4o-mini | gpt-4.1-mini | Δ |
-|---|---|---|---|
-| title | 0.93 | 0.94 | +0.01 |
-| seniority | 0.86 | 0.92 | **+0.06** |
-| work_mode | 0.98 | 1.00 | +0.02 |
-| location | 0.68 | 0.66 | −0.02 |
-| skills | 0.91 | 0.87 | −0.04 |
-
-`gpt-4.1-mini` wins on seniority and work_mode classification. `gpt-4o-mini` is slightly better on skills (less conservative on sparse descriptions). Location is the weakest field for both — fuzzy match degrades on city+country vs city-only mismatches.
+Location is the weakest field — fuzzy match degrades on city+country vs city-only mismatches. Title scores perfectly with the LLM judge, which handles translations and reformulations that string matching would miss.
 
 Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run notebooks/model_comparison.py`.
 
@@ -122,7 +124,7 @@ uv run pytest tests/unit/ -v
 
 # Run the full eval CLI (requires OPENAI_API_KEY)
 export OPENAI_API_KEY=sk-...
-uv run python run_eval.py --model gpt-4o-mini
+uv run python run_eval.py --model gpt-4o-mini --judge-model gpt-4o
 
 # Run component eval via pytest
 uv run pytest evals/component/ -v
@@ -151,12 +153,15 @@ llm-eval/
 │   └── scoring/
 │       ├── base.py            # Scorer / AsyncScorer protocols
 │       ├── deterministic.py   # ExactMatchScorer, FuzzyMatchScorer
-│       ├── embedding.py       # EmbeddingScorer, EmbeddingF1Scorer
 │       └── llm_judge.py       # LLMJudgeScorer with caching
 │   └── eval/
 │       ├── runner.py          # Async eval loop
 │       ├── dataset.py         # Load/validate golden set from JSONL
 │       └── experiment.py      # load_experiment(), compare_experiments()
+├── docs/
+│   ├── intro.md               # Why LLM evaluation is hard and how to solve it
+│   ├── design.md              # Scoring strategy rationale per field
+│   └── success_criteria.md    # Specific, measurable eval targets
 ├── evals/
 │   ├── component/
 │   │   ├── test_extraction.py # Field-level accuracy (requires API key)

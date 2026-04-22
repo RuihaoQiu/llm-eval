@@ -18,7 +18,7 @@ _client = AsyncOpenAI()
 
 _SCORE_MAP: dict[int, float] = {0: 0.0, 1: 0.5, 2: 1.0}
 
-_DEFAULT_RUBRIC = """You are evaluating whether an extracted job title matches the expected job title.
+TITLE_RUBRIC = """You are evaluating whether an extracted job title matches the expected job title.
 
 Score the match on a 0–2 scale:
   2: The titles are semantically equivalent or one is a minor reformulation of the other
@@ -26,6 +26,17 @@ Score the match on a 0–2 scale:
   1: The titles are related but meaningfully different
      (e.g. "Data Engineer" vs "Data Analyst")
   0: The titles are unrelated or one is clearly wrong
+
+Return only the score (0, 1, or 2) and a one-sentence reasoning."""
+
+SKILLS_RUBRIC = """You are evaluating whether an extracted skills list matches the expected skills list.
+
+Score the match on a 0–2 scale:
+  2: The lists cover the same skills (order-invariant), allowing for abbreviation and synonym
+     differences (e.g. "k8s" = "Kubernetes", "sklearn" = "scikit-learn", "PyTorch" = "torch").
+  1: Partial overlap — some expected skills are missing or some extra skills were hallucinated,
+     but the core skills are present.
+  0: Little or no overlap — the lists are fundamentally different.
 
 Return only the score (0, 1, or 2) and a one-sentence reasoning."""
 
@@ -46,7 +57,7 @@ class LLMJudgeScorer:
     """
 
     name: str = "llm_judge"
-    rubric: str = _DEFAULT_RUBRIC
+    rubric: str = TITLE_RUBRIC
     model: str = "gpt-4o-mini"
     threshold: float = 0.5
     _cache: dict[str, ScorerResult] = field(default_factory=dict, repr=False)
@@ -68,17 +79,26 @@ class LLMJudgeScorer:
         logger.debug("LLMJudge: expected=%r actual=%r score=%d", expected, actual, verdict.score)
         return ScorerResult(score=score, passed=score >= self.threshold, reason=verdict.reasoning)
 
-    async def score(self, expected: str | None, actual: str | None) -> ScorerResult:
+    async def score(
+        self,
+        expected: str | list[str] | None,
+        actual: str | list[str] | None,
+    ) -> ScorerResult:
         if expected is None and actual is None:
             return ScorerResult(score=1.0, passed=True)
-        if expected is None or actual is None:
+        if (not expected) and (not actual):
+            return ScorerResult(score=1.0, passed=True)
+        if not expected or not actual:
             return ScorerResult(score=0.0, passed=False, reason=f"expected={expected!r}, actual={actual!r}")
 
-        key = self._cache_key(expected, actual)
+        exp_str = ", ".join(expected) if isinstance(expected, list) else expected
+        act_str = ", ".join(actual) if isinstance(actual, list) else actual
+
+        key = self._cache_key(exp_str, act_str)
         if key in self._cache:
-            logger.debug("LLMJudge cache hit for expected=%r", expected[:30])
+            logger.debug("LLMJudge cache hit for expected=%r", exp_str[:30])
             return self._cache[key]
 
-        result = await self._call_judge(expected, actual)
+        result = await self._call_judge(exp_str, act_str)
         self._cache[key] = result
         return result
