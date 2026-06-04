@@ -42,10 +42,10 @@ Most LLM eval setups make the same mistakes:
 data/golden_set.jsonl
         │
         ▼
- eval/dataset.py          ← load + validate golden examples
+ llm_eval/eval/dataset.py  ← load + validate golden examples
         │
         ▼
- eval/runner.py           ← async loop (semaphore, tracing)
+ llm_eval/eval/runner.py  ← async loop (semaphore, tracing)
         │        │
         ▼        ▼
   agent.py    scoring/    ← field-specific scorers
@@ -113,6 +113,12 @@ Versioned artifacts in `data/experiments/`. Visualise with `uv run marimo run no
 
 ---
 
+## Prerequisites
+
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (`pip install uv`)
+- `OPENAI_API_KEY` for eval runs (unit tests don't need it)
+
 ## Quickstart
 
 ```bash
@@ -146,6 +152,7 @@ uv run marimo run notebooks/model_comparison.py
 
 ```
 llm-eval/
+├── run_eval.py            # CLI entry point
 ├── llm_eval/
 │   ├── agent.py               # Single-step extractor (OpenAI structured output)
 │   ├── schemas.py             # Pydantic models: JobInfo, GoldenExample, EvalReport
