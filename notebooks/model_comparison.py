@@ -1,9 +1,9 @@
 """Marimo notebook: side-by-side model comparison from versioned experiment artifacts.
 
 Run with:
-    uv run marimo run notebooks/03_model_comparison.py
+    uv run marimo run notebooks/model_comparison.py
 Or edit mode:
-    uv run marimo edit notebooks/03_model_comparison.py
+    uv run marimo edit notebooks/model_comparison.py
 """
 
 import marimo

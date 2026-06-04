@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import logging
+import time
 
 import logfire
 from openai import AsyncOpenAI
 
-from llm_eval.schemas import JobInfo
+from llm_eval.schemas import ExtractionResult, JobInfo
 
 logger = logging.getLogger(__name__)
 
@@ -25,9 +26,10 @@ async def extract_job_info(
     raw_title: str,
     model: str = "gpt-4o-mini",
     job_id: str = "unknown",
-) -> JobInfo:
+) -> ExtractionResult:
     with logfire.span("extract_job_info", job_id=job_id, model=model):
         logger.debug("Extracting job info model=%s job_id=%s title=%.50s", model, job_id, raw_title)
+        t0 = time.monotonic()
         response = await _client.beta.chat.completions.parse(
             model=model,
             messages=[
@@ -36,6 +38,13 @@ async def extract_job_info(
             ],
             response_format=JobInfo,
         )
+        latency_ms = (time.monotonic() - t0) * 1000
         result = response.choices[0].message.parsed
+        usage = response.usage
+        total_tokens = usage.total_tokens if usage else 0
         logfire.info("extraction complete", job_id=job_id, result=result.model_dump())
-        return result
+        return ExtractionResult(
+            job_info=result,
+            latency_ms=latency_ms,
+            total_tokens=total_tokens,
+        )

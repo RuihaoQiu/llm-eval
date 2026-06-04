@@ -1,6 +1,5 @@
 import argparse
 import asyncio
-import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,7 +30,9 @@ def _print_summary(report: EvalReport) -> None:
         ("Model: ", "bold"), (report.model, "cyan"), "  |  ",
         ("Mean score: ", "bold"), (f"{report.mean_score:.2f}", color), "  |  ",
         ("Pass rate: ", "bold"), (f"{report.pass_rate:.0%}", color),
-        f"  ({sum(e.passed for e in report.examples)}/{len(report.examples)} examples)",
+        f"  ({sum(e.passed for e in report.examples)}/{len(report.examples)} examples)", "\n",
+        ("Avg latency: ", "bold"), f"{report.mean_latency_ms:.0f}ms", "  |  ",
+        ("Total tokens: ", "bold"), f"{report.total_tokens:,}",
     )
     console.print(Panel(summary, title="Eval Summary", border_style=color))
 
@@ -95,13 +96,16 @@ def _save_artifact(report: EvalReport) -> Path:
     return path
 
 
-async def main(model: str, save: bool) -> None:
+async def main(model: str, judge_model: str, save: bool) -> None:
     configure_logfire()
     examples = load_golden_set(GOLDEN_SET_PATH)
     category_by_id = {ex.id: ex.category for ex in examples}
-    console.print(f"Running eval on [cyan]{len(examples)}[/cyan] examples with [cyan]{model}[/cyan]…")
+    console.print(
+        f"Running eval on [cyan]{len(examples)}[/cyan] examples "
+        f"with [cyan]{model}[/cyan] (judge: [cyan]{judge_model}[/cyan])…"
+    )
 
-    report = await run_eval(examples, model=model)
+    report = await run_eval(examples, model=model, judge_model=judge_model)
     logfire.force_flush()
 
     _print_summary(report)
@@ -116,6 +120,7 @@ async def main(model: str, save: bool) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the job-extraction eval")
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model to evaluate")
+    parser.add_argument("--judge-model", default="gpt-4o", help="OpenAI model for LLM judge scoring")
     parser.add_argument("--no-save", action="store_true", help="Skip saving the result artifact")
     args = parser.parse_args()
-    asyncio.run(main(model=args.model, save=not args.no_save))
+    asyncio.run(main(model=args.model, judge_model=args.judge_model, save=not args.no_save))

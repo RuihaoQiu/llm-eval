@@ -16,7 +16,7 @@ class Scorer(Protocol):
 
 @runtime_checkable
 class AsyncScorer(Protocol):
-    """Async scorer protocol for scorers that make API calls (embeddings, LLM judge)."""
+    """Async scorer protocol for scorers that make API calls (LLM judge)."""
 
     name: str
 
